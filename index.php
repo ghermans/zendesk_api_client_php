@@ -38,6 +38,7 @@
             <strong>Tickets</strong>
             <ul>
               <li><a href="samples/tickets/qcreateTicket.php">Create a new ticket.</a></li>
+              <li><a href="samples/tickets/createTicketWithAttachment.php">Create a new ticket with attachment.</a></li>
               <li><a href="samples/tickets/createTicket.php">Create a new ticket with the requester's email address, if the requester's identity doesn't exist.</a></li>
               <div class="clearfix">&nbsp;</div>
 
@@ -57,6 +58,12 @@
               <li><a href="samples/users/createUser.php">Create a new end-user</a></li>
               <li><a href="samples/users/getUsers.php">Retrieve all end-users</a></li>
               <li><a href="samples/users/searchUser.php">Search end-user</a></li>
+            </ul>
+
+            <strong>Attachments</strong>
+            <ul>
+              <li><a href="samples/attachments/uploadFileAttachment.php">Upload a file attachment</a></li>
+              <li><a href="samples/attachments/uploadStreamAttachment.php">Upload a stream attachment</a></li>
             </ul>
 
             <div class="clearfix">&nbsp;</div>

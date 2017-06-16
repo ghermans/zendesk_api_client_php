@@ -9,21 +9,23 @@ use Zendesk\API\HttpClient as ZendeskAPI;
  */
 
 $subdomain = "subdomain";
-$username = "email@example.com";
-$token = "6wiIBWbGkBMo1mRDMuVwkw1EPsNkeUj95PIz2akv";
+$username  = "email@example.com";
+$token     = "6wiIBWbGkBMo1mRDMuVwkw1EPsNkeUj95PIz2akv";
 
 $client = new ZendeskAPI($subdomain);
 $client->setAuth('basic', ['username' => $username, 'token' => $token]);
 
 try {
-    // Query Zendesk API to retrieve the ticket details
+    // Upload an existing file attachment.
+    $attachment = $client->attachments()->upload(array(
+        'file' => '../../tests/assets/UK.png',
+        'type' => 'image/png',
+        'name' => 'UK test non-alpha chars.png'
+    ));
 
-    $id = 1;
-    $tickets = $client->tickets()->find($id);
-
-    // Show the results
+    // Show result
     echo "<pre>";
-    print_r($tickets->ticket);
+    print_r($attachment);
     echo "</pre>";
 } catch (\Zendesk\API\Exceptions\ApiResponseException $e) {
     echo $e->getMessage().'</br>';
